@@ -1,4 +1,4 @@
-# Reiniciar-USB-Usiminas
+# Reiniciar-USB-Automático
 Esse repositório foi criado com o intuito de facilitar a instalação e aplicação de um método para verificar se há internet no computador. Para que, em seguida reinicie a porta USB contendo o receptor de internet.
 
 <br>
