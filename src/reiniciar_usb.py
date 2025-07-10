@@ -34,8 +34,13 @@ def restart_usb(hardware_id, devcon_path="devcon"):
         print(f"Tentando ativar: {hardware_id}")
         subprocess.run([devcon_path, "enable", hardware_id], check=True)
         print("✅ Dispositivo reiniciado com sucesso.")
-    except subprocess.CalledProcessError as e:
-        print("❌ Erro ao reiniciar o dispositivo:", e)
+    except:
+        try:
+            print(f"Tentando reiniciar: {hardware_id}")
+            subprocess.run([devcon_path, "restart", hardware_id], check=True)
+            time.sleep(2)
+        except subprocess.CalledProcessError as e:
+            print("❌ Erro ao reiniciar o dispositivo:", e)
 
 def main():
     print("⏳ Verificando conexão com a internet...")
